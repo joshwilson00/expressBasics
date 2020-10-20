@@ -15,9 +15,12 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.1.0",
     "handlebars": "^4.7.6",
-    "node-fetch": "^2.6.1"
+    "node-fetch": "^2.6.1",
+    "sequelize": "^6.3.5",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
+    "jest": "^26.6.0",
     "nodemon": "^2.0.5"
   }
 }
