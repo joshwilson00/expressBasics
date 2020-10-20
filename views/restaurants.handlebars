@@ -1,0 +1,25 @@
+
+<div class="container">
+{{#each restaurants}}
+{{!-- <article class="card">
+  <img src="{{this.image}}" alt="{{this.name}}" style="width:100%">
+  <div class="container">
+    <h4><b>{{this.name}}</b></h4> 
+  </div>
+</article> --}}
+
+<article class="card">
+    <a href="/restaurants/{{this.id}}" style="text-decoration: none; color:black;">
+    <img src="{{this.image}}" alt="{{this.name}} image">
+    <div class="title"><strong>{{this.name}}</strong></div>
+    <div class="menus">
+        <small>Menus</small>
+        {{#each this.menus}}
+            <p>{{this.title}}</p>
+        {{/each}}
+    </div>
+    </a>
+</article>
+{{/each}}
+
+</div>
