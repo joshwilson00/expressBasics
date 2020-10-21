@@ -1,7 +1,7 @@
 const { Sequelize, DataTypes, Model } = require("sequelize");
 const data = require('./restaurants.json');
 const path = require('path')
-const sequelize = process.env.NODE_ENV === 'test'
+const sequelize = process.env.ENVIRONMENT === 'true'
     ? new Sequelize('sqlite::memory:', null, null, {dialect: 'sqlite'})
     : new Sequelize({dialect: 'sqlite', storage: path.join(__dirname, 'data.db')})
 

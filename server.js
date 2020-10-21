@@ -1,3 +1,4 @@
+require('dotenv').config();
 const fetch = require('node-fetch');
 const express = require('express');
 const Handlebars = require('handlebars')
@@ -23,11 +24,14 @@ app.get('/restaurants', async (req, res)=>{
     res.render('restaurants', {restaurants});
 })
 
-app.get('/restaurants/:id', (req, res)=>{
+app.get('/restaurants/:id', async (req, res)=>{
     console.log(req.params.id);
+    const restaurant = await Restaurant.findByPk(req.params.id, {include: [{all: true, nested: true}]});
+    res.render('restaurant', {restaurant});
 })
 
 app.listen(3000, async (err)=>{
+    console.log(process.env.NODE_ENV)
     await sequelize.sync();
     await load();
     if (err) throw new Error(err);

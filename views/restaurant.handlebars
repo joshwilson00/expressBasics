@@ -1,0 +1,15 @@
+<h1>{{restaurant.name}}</h1>
+<section>
+    {{#each restaurant.menus}}
+    <article class="menu">
+        <div class="title"><strong>{{this.title}}</strong></div>
+        <div class="items">
+            <small>Items</small>
+            {{#each this.items}}
+                <p>{{this.name}}</p>
+                <p>£{{this.price}}</p>
+            {{/each}}
+        </div>
+    </article>
+    {{/each}}
+</section>
